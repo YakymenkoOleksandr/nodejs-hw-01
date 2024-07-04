@@ -1,11 +1,10 @@
 import { PATH_DB } from '../constants/contacts.js';
 import fs from 'fs/promises';
-import path from 'path';
 
 // Видаляємо останній контакт в місиві меодом .pop()
 export const removeLastContact = async () => {
  try {
-        const filePath = path.join(PATH_DB);
+        const filePath = PATH_DB;
         let data = await fs.readFile(filePath, 'utf8');
         data = JSON.parse(data);
      if (data.length >= 1) {

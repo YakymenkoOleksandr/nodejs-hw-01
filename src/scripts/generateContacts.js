@@ -1,7 +1,6 @@
 import { PATH_DB } from '../constants/contacts.js';
 import { createFakeContact } from '../utils/createFakeContact.js';
 import fs from 'fs/promises';
-import path from 'path';
 
 // Отримуємо контакти наявні у файлі
 const getContacts = async (filePath) => {
@@ -32,7 +31,7 @@ const createContacts = (number) => {
 // Додавання контактів до файлу
 const generateContacts = async (number) => {
   try {
-    const filePath = path.join(PATH_DB);
+    const filePath = PATH_DB;
     const сontactsFromDB = await getContacts(filePath);
     const сontacts = createContacts(number);
     const updatedContacts = [...сontactsFromDB, ...сontacts];
