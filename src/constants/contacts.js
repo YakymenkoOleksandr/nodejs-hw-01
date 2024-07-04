@@ -1,2 +1,3 @@
 import path from 'path';
-export const PATH_DB = path.join(__dirname, '..', 'db', 'db.json');
+const pathToWorkDir = path.join(process.cwd());
+export const PATH_DB = path.join(pathToWorkDir,'src', 'db', 'db.json');
